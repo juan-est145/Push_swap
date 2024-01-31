@@ -82,3 +82,6 @@ re: fclean
 	$(MAKE) all
 
 .Phony: all clean fclean re 
+
+debug: CFLAGS += -g
+debug: all

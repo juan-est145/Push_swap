@@ -21,6 +21,9 @@ all: make-library $(NAME)
 make-library:
 	$(MAKE) -C $(LIBFT_PATH)
 
+make-library-debug:
+	$(MAKE) -C $(LIBFT_PATH) debug
+
 $(NAME): $(OBJS) $(HEADER)
 	$(COMPILER) $(CFLAGS) $(LIBRARY_FLAG) $(NAME) $(OBJS)
 
@@ -36,4 +39,4 @@ re: fclean
 	$(MAKE) all
 
 debug: CFLAGS += -g
-debug: all
+debug: make-library-debug $(NAME)
