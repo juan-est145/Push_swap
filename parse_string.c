@@ -6,7 +6,7 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 19:52:37 by juestrel          #+#    #+#             */
-/*   Updated: 2024/01/31 12:58:42 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/01/31 13:06:10 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,3 @@
 #include "libft/libft.h"
 #include "push_swap.h"
 
-void	prueba(void)
-{
-	ft_printf("xd");
-}

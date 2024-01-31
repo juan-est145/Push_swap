@@ -34,3 +34,6 @@ fclean: clean
 
 re: fclean
 	$(MAKE) all
+
+debug: CFLAGS += -g
+debug: all

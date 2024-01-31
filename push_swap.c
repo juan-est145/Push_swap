@@ -6,7 +6,7 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 19:31:25 by juestrel          #+#    #+#             */
-/*   Updated: 2024/01/31 13:04:30 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/01/31 13:27:38 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,14 @@
 
 int	main(int argc, char *argv[])
 {
-	(void)argv;
+	while (1)
+	{
+		ft_printf("Estamos aquí\n");
+	}
+
 	if (argc < 2)
 		ft_no_arguments();
+	else if (argc == 2)
+		argv = ft_split(argv[1], ' ');
 	return (0);
 }

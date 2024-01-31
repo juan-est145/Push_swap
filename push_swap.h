@@ -6,7 +6,7 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 12:35:15 by juestrel          #+#    #+#             */
-/*   Updated: 2024/01/31 12:58:48 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/01/31 13:06:06 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,4 @@
 # include <stdbool.h>
 
 void	ft_no_arguments(void);
-void	prueba(void);
 #endif
