@@ -6,7 +6,7 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 12:35:15 by juestrel          #+#    #+#             */
-/*   Updated: 2024/01/31 13:06:06 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/01/31 15:28:18 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,4 +16,6 @@
 # include <stdbool.h>
 
 void	ft_no_arguments(void);
+bool	ft_parse_arguments(char *argv[]);
+void	ft_error_in_split(void);
 #endif
