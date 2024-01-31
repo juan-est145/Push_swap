@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/30 19:31:25 by juestrel          #+#    #+#             */
-/*   Updated: 2024/01/31 13:04:30 by juestrel         ###   ########.fr       */
+/*   Created: 2023/12/05 18:44:24 by juestrel          #+#    #+#             */
+/*   Updated: 2023/12/07 11:22:06 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char *argv[])
+t_list	*ft_lstnew(void *content)
 {
-	(void)argv;
-	if (argc < 2)
-		ft_no_arguments();
-	return (0);
+	t_list	*new_node;
+
+	new_node = (t_list *)malloc(sizeof(t_list));
+	if (new_node == NULL)
+	{
+		return (NULL);
+	}
+	new_node->content = content;
+	new_node->next = NULL;
+	return (new_node);
 }

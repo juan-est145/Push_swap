@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/30 19:31:25 by juestrel          #+#    #+#             */
-/*   Updated: 2024/01/31 13:04:30 by juestrel         ###   ########.fr       */
+/*   Created: 2024/01/31 12:35:15 by juestrel          #+#    #+#             */
+/*   Updated: 2024/01/31 12:58:48 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
-#include "push_swap.h"
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-int	main(int argc, char *argv[])
-{
-	(void)argv;
-	if (argc < 2)
-		ft_no_arguments();
-	return (0);
-}
+# include <stdbool.h>
+
+void	ft_no_arguments(void);
+void	prueba(void);
+#endif

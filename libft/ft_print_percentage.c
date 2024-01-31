@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_print_percentage.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/30 19:31:25 by juestrel          #+#    #+#             */
-/*   Updated: 2024/01/31 13:04:30 by juestrel         ###   ########.fr       */
+/*   Created: 2023/12/16 19:33:18 by juestrel          #+#    #+#             */
+/*   Updated: 2024/01/24 13:40:37 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char *argv[])
+int	ft_print_percentage(char c, unsigned int *i)
 {
-	(void)argv;
-	if (argc < 2)
-		ft_no_arguments();
-	return (0);
+	int	counter;
+
+	counter = 1;
+	ft_putchar_fd(c, 1);
+	(*i) += 2;
+	return (counter);
 }

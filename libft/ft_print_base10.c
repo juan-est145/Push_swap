@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_print_base10.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/30 19:31:25 by juestrel          #+#    #+#             */
-/*   Updated: 2024/01/31 13:04:30 by juestrel         ###   ########.fr       */
+/*   Created: 2023/12/15 16:16:28 by juestrel          #+#    #+#             */
+/*   Updated: 2024/01/24 13:39:14 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char *argv[])
+int	ft_print_base10(int number, unsigned int *i)
 {
-	(void)argv;
-	if (argc < 2)
-		ft_no_arguments();
-	return (0);
+	char	*str_number;
+	int		counter;
+
+	str_number = ft_itoa(number);
+	counter = ft_print_string(str_number, i);
+	if (str_number != NULL)
+	{
+		free(str_number);
+	}
+	return (counter);
 }

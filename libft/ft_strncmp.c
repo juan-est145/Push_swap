@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/30 19:31:25 by juestrel          #+#    #+#             */
-/*   Updated: 2024/01/31 13:04:30 by juestrel         ###   ########.fr       */
+/*   Created: 2023/11/28 16:11:04 by juestrel          #+#    #+#             */
+/*   Updated: 2023/12/04 14:05:00 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char *argv[])
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	(void)argv;
-	if (argc < 2)
-		ft_no_arguments();
+	size_t	i;
+
+	i = 0;
+	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
+	{
+		if ((unsigned char)s1[i] > (unsigned char)s2[i])
+		{
+			return (1);
+		}
+		else if ((unsigned char)s1[i] < (unsigned char)s2[i])
+		{
+			return (-1);
+		}
+		i++;
+	}
 	return (0);
 }

@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_print_string.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/30 19:31:25 by juestrel          #+#    #+#             */
-/*   Updated: 2024/01/31 13:04:30 by juestrel         ###   ########.fr       */
+/*   Created: 2023/12/15 14:40:44 by juestrel          #+#    #+#             */
+/*   Updated: 2024/01/24 13:41:31 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char *argv[])
+int	ft_print_string(char *string, unsigned int *i)
 {
-	(void)argv;
-	if (argc < 2)
-		ft_no_arguments();
-	return (0);
+	int	counter;
+
+	if (string == NULL)
+	{
+		ft_putstr_fd("(null)", 1);
+		counter = 6;
+		(*i) += 2;
+		return (counter);
+	}
+	else
+	{
+		counter = ft_strlen(string);
+		ft_putstr_fd(string, 1);
+		(*i) += 2;
+		return (counter);
+	}
 }
