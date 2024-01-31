@@ -6,19 +6,36 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 19:52:37 by juestrel          #+#    #+#             */
-/*   Updated: 2024/01/31 16:39:59 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/01/31 19:21:09 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // Need to check no duplicate numbers
-// 0 5 2 3 5 -5 Valid input
-// "4 5 6 8 9" 2 -2 +9 Invalid input
-// 2.4 2 4 1 4 5 Invalid Input
 
 #include "libft/libft.h"
 #include "push_swap.h"
 
-bool	ft_parse_arguments(char *argv[])
+static long	ft_atoi_long(const char *str);
+
+bool	ft_parse_arguments(char *argv[], t_stack_node **stack)
+{
+	long	number;
+
+	if (ft_check_validity(argv) == true)
+	{
+		while (argv != NULL)
+		{
+			number = ft_atoi_long(*argv);
+			if (number > 2147483647 || number < -2147483648)
+				return (ft_integer_overflow());
+			if (ft_add_to_stack(stack, number) == NULL)
+				return (false);
+			argv++;
+		}
+	}
+}
+
+static bool	ft_check_validity(char *argv[])
 {
 	unsigned int	i;
 	unsigned int	j;
@@ -40,4 +57,29 @@ bool	ft_parse_arguments(char *argv[])
 		j = 1;
 	}
 	return (true);
+}
+
+static long	ft_atoi_long(const char *str)
+{
+	int		i;
+	long	result;
+	int		minus_operator;
+	char	*string;
+
+	i = 1;
+	result = 0;
+	string = (char *)str;
+	if (str[0] == '+')
+		minus_operator = 1;
+	else if (str[0] == '-')
+		minus_operator = -1;
+	while (string[i] != '\0')
+	{
+		if (string[i] >= '0' && string[i] <= '9')
+			result = (result * 10) + (str[i] - 48);
+		else if (!(string[i] >= '0' && string[i] <= '9'))
+			return (result *= minus_operator);
+		i++;
+	}
+	return (result *= minus_operator);
 }
