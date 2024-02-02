@@ -6,7 +6,7 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 19:52:37 by juestrel          #+#    #+#             */
-/*   Updated: 2024/02/02 19:31:09 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/02/02 19:55:51 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ bool	ft_parse_arguments(char *argv[], t_stack_node **stack)
 				return (free_tree(duplicates), ft_integer_overflow());
 			if (ft_add_to_stack(stack, (int)number) == NULL)
 				return (free_tree(duplicates), false);
-			if (ft_check_duplicate(&duplicates, (*stack)->value) == NULL)
+			if (ft_check_duplicate(&duplicates, (int)number) == NULL)
 				return (free_tree(duplicates), false);
 			argv++;
 		}

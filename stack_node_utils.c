@@ -6,7 +6,7 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 18:50:06 by juestrel          #+#    #+#             */
-/*   Updated: 2024/02/02 18:46:20 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/02/02 19:50:34 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "push_swap.h"
 
 static void		ft_malloc_failure(t_stack_node **stack);
+static void		ft_queue(t_stack_node **head, t_stack_node *node);
 
 t_stack_node	*ft_add_to_stack(t_stack_node **stack, int value)
 {
@@ -29,11 +30,7 @@ t_stack_node	*ft_add_to_stack(t_stack_node **stack, int value)
 	node->next = NULL;
 	node->previous = NULL;
 	if (*stack != NULL)
-	{
-		(*stack)->previous = node;
-		node->next = (*stack);
-		*stack = node;
-	}
+		ft_queue(stack, node);
 	else
 		*stack = node;
 	return (node);
@@ -66,4 +63,15 @@ void	ft_free_stack(t_stack_node **stack)
 		*stack = (*stack)->next;
 		free(temp);
 	}
+}
+
+static void	ft_queue(t_stack_node **head, t_stack_node *node)
+{
+	t_stack_node	*temp;
+
+	temp = *head;
+	while (temp->next != NULL)
+		temp = temp->next;
+	node->previous = temp;
+	temp->next = node;
 }
