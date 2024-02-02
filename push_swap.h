@@ -6,7 +6,7 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 12:35:15 by juestrel          #+#    #+#             */
-/*   Updated: 2024/02/02 13:12:14 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/02/02 18:47:05 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef struct s_struct_tree
 
 bool						ft_parse_arguments(char *argv[],
 								t_stack_node **stack);
-t_stack_node				*ft_add_to_stack(t_stack_node **stack, int value);
+void						ft_free_array(char *argv[]);
 
 // Functions for handling errors
 void						ft_no_arguments(void);
@@ -44,4 +44,8 @@ t_binary_tree				*ft_add_tree_node(int value);
 t_binary_tree				*ft_check_duplicate(t_binary_tree **root,
 								int value);
 void						free_tree(t_binary_tree *root);
+
+// Functions for stacks
+t_stack_node				*ft_add_to_stack(t_stack_node **stack, int value);
+void						ft_free_stack(t_stack_node **stack);
 #endif

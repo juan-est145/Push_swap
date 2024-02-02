@@ -6,7 +6,7 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 12:39:41 by juestrel          #+#    #+#             */
-/*   Updated: 2024/02/02 11:44:25 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/02/02 18:54:28 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ void	ft_invalid_arguments(char *argv[], bool malloc)
 {
 	ft_printf("Error, invalid arguments, exiting the program\n");
 	if (malloc == true)
-		free(argv);
+		ft_free_array(argv);
 	exit(1);
 }

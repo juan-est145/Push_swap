@@ -6,7 +6,7 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 18:50:06 by juestrel          #+#    #+#             */
-/*   Updated: 2024/02/02 12:11:59 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/02/02 18:46:20 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,17 @@ static void	ft_malloc_failure(t_stack_node **stack)
 		}
 	}
 	ft_printf("Error allocating memory to stash node, exiting program\n");
+}
+
+void	ft_free_stack(t_stack_node **stack)
+{
+	t_stack_node	*temp;
+
+	temp = NULL;
+	while (*stack != NULL)
+	{
+		temp = *stack;
+		*stack = (*stack)->next;
+		free(temp);
+	}
 }

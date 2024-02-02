@@ -1,38 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/30 19:31:25 by juestrel          #+#    #+#             */
-/*   Updated: 2024/02/02 19:04:58 by juestrel         ###   ########.fr       */
+/*   Created: 2024/02/02 18:36:55 by juestrel          #+#    #+#             */
+/*   Updated: 2024/02/02 18:38:59 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 #include "push_swap.h"
 
-int	main(int argc, char *argv[])
+void	ft_free_array(char *argv[])
 {
-	t_stack_node	*a;
-	t_stack_node	*b;
+	unsigned int	i;
 
-	a = NULL;
-	b = NULL;
-	if (argc < 2 || argv[1][0] == '\0')
-		ft_no_arguments();
-	else if (argc == 2)
+	i = 0;
+	while (argv[i] != NULL)
 	{
-		argv = ft_split(argv[1], ' ');
-		if (argv == NULL)
-			ft_error_in_split();
-		if (ft_parse_arguments(argv, &a) == false)
-			ft_invalid_arguments(argv, true);
-		ft_free_array(argv);
+		free(argv[i]);
+		i++;
 	}
-	else
-		if (ft_parse_arguments(argv + 1, &a) == false)
-			ft_invalid_arguments(argv, false);
-	return (0);
+	free(argv);
 }

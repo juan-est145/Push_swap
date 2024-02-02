@@ -7,6 +7,7 @@ error_msgs.c\
 parse_string.c\
 stack_node_utils.c\
 binary_tree_functions.c\
+utils.c\
 
 OBJS = $(SCRS:.c=.o)
 

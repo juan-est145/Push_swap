@@ -6,7 +6,7 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 19:52:37 by juestrel          #+#    #+#             */
-/*   Updated: 2024/02/02 17:44:08 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/02/02 19:16:16 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 static long	ft_atoi_long(const char *str);
 static bool	ft_check_validity(char *argv[]);
+static int	ft_atoi_symbols(int *i, char *str);
 
 bool	ft_parse_arguments(char *argv[], t_stack_node **stack)
 {
@@ -32,15 +33,12 @@ bool	ft_parse_arguments(char *argv[], t_stack_node **stack)
 			if (number > 2147483647 || number < -2147483648)
 				return (ft_integer_overflow());
 			if (ft_add_to_stack(stack, (int)number) == NULL)
-				return (false);
+				return (free_tree(duplicates), false);
 			if (ft_check_duplicate(&duplicates, (*stack)->value) == NULL)
-			{
-				free_tree(duplicates);
-				return (false);
-			}
+				return (free_tree(duplicates), false);
 			argv++;
 		}
-		return (true);
+		return (free_tree(duplicates), true);
 	}
 	return (false);
 }
@@ -79,10 +77,7 @@ static long	ft_atoi_long(const char *str)
 	i = 0;
 	result = 0;
 	string = (char *)str;
-	if (str[0] == '+' || (string[i] >= '0' && string[i] <= '9'))
-		minus_operator = 1;
-	else if (str[0] == '-')
-		minus_operator = -1;
+	minus_operator = ft_atoi_symbols(&i, string);
 	while (string[i] != '\0')
 	{
 		if (string[i] >= '0' && string[i] <= '9')
@@ -92,4 +87,19 @@ static long	ft_atoi_long(const char *str)
 		i++;
 	}
 	return (result *= minus_operator);
+}
+
+static int	ft_atoi_symbols(int *i, char *str)
+{
+	int	minus_operator;
+
+	minus_operator = 1;
+	if (str[0] == '+')
+		(*i)++;
+	else if (str[0] == '-')
+	{
+		minus_operator *= -1;
+		(*i)++;
+	}
+	return (minus_operator);
 }
