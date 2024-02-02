@@ -9,7 +9,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/Push_swap",
-            "args": ["4", "5", "6", "8", "9", "2", "-2", "+9"],
+            "args": ["2", "2147483648"],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
@@ -33,4 +33,6 @@
 //"5", "87", "96", "", "-2" Expected: false
 //"1", "Four", "-98", "-7" Expected: false
 //"1 8 9 4 2 4 6" Expected: false
+//"2", "2147483647" Expected: true
+//"2", "2147483648" Expected: false
 
