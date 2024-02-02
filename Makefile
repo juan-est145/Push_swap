@@ -6,6 +6,7 @@ SCRS = push_swap.c\
 error_msgs.c\
 parse_string.c\
 stack_node_utils.c\
+binary_tree_functions.c\
 
 OBJS = $(SCRS:.c=.o)
 

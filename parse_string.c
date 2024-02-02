@@ -6,7 +6,7 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 19:52:37 by juestrel          #+#    #+#             */
-/*   Updated: 2024/02/02 12:14:16 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/02/02 13:21:59 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,10 @@ static bool	ft_check_validity(char *argv[]);
 
 bool	ft_parse_arguments(char *argv[], t_stack_node **stack)
 {
-	long	number;
+	long			number;
+	t_binary_tree	*duplicates;
 
+	duplicates = NULL;
 	if (ft_check_validity(argv) == true)
 	{
 		while (argv != NULL)
@@ -31,7 +33,11 @@ bool	ft_parse_arguments(char *argv[], t_stack_node **stack)
 				return (ft_integer_overflow());
 			if (ft_add_to_stack(stack, (int)number) == NULL)
 				return (false);
-			//Add function to check for duplicates
+			if (ft_check_duplicate(&duplicates, (*stack)->value) == NULL)
+			{
+				free_tree(duplicates);
+				return (false);
+			}
 			argv++;
 		}
 		return (true);
