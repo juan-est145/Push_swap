@@ -1,0 +1,36 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(lldb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/Push_swap",
+            "args": ["4", "5", "6", "8", "9", "2", "-2", "+9"],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb"
+        }
+    ]
+}
+
+//"1 8 9 4 2 5 6" Expected: true
+//"1", "4", "-98", "-7" Expected: true
+//"2.4 2 4 1 4 5" Expected: false
+//"2 9.08 4 1 4 5" Expected: false
+// "4 5 6 8 9 2 -2 +9" Expected: true
+//"4", "5", "6", "8", "9", "2", "-2", "+9" Expected: false
+//"4", "5", "6", "8", "9", "2", "-2", "+20" Expected: true
+// "4 5 6 8 9" , "2" , "-2" , "+10" Expected: false
+//"45689", "2", "-2", "+9" Expected : true
+// "" Expected: false
+//"5", "", "96", "25", "-2" Expected: false
+//"5", "87", "96", "", "-2" Expected: false
+//"1", "Four", "-98", "-7" Expected: false
+//"1 8 9 4 2 4 6" Expected: false
+
