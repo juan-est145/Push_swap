@@ -6,7 +6,7 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 12:39:41 by juestrel          #+#    #+#             */
-/*   Updated: 2024/01/31 18:34:45 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/02/02 11:44:25 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,12 @@ bool	ft_integer_overflow(void)
 {
 	ft_printf("Integer overflow, exiting program\n");
 	return (false);
+}
+
+void	ft_invalid_arguments(char *argv[], bool malloc)
+{
+	ft_printf("Error, invalid arguments, exiting the program\n");
+	if (malloc == true)
+		free(argv);
+	exit(1);
 }

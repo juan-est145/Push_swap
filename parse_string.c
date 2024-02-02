@@ -6,7 +6,7 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 19:52:37 by juestrel          #+#    #+#             */
-/*   Updated: 2024/01/31 19:26:18 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/02/02 12:14:16 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "push_swap.h"
 
 static long	ft_atoi_long(const char *str);
+static bool	ft_check_validity(char *argv[]);
 
 bool	ft_parse_arguments(char *argv[], t_stack_node **stack)
 {
@@ -30,9 +31,12 @@ bool	ft_parse_arguments(char *argv[], t_stack_node **stack)
 				return (ft_integer_overflow());
 			if (ft_add_to_stack(stack, (int)number) == NULL)
 				return (false);
+			//Add function to check for duplicates
 			argv++;
 		}
+		return (true);
 	}
+	return (false);
 }
 
 static bool	ft_check_validity(char *argv[])
@@ -66,10 +70,10 @@ static long	ft_atoi_long(const char *str)
 	int		minus_operator;
 	char	*string;
 
-	i = 1;
+	i = 0;
 	result = 0;
 	string = (char *)str;
-	if (str[0] == '+')
+	if (str[0] == '+' || (string[i] >= '0' && string[i] <= '9'))
 		minus_operator = 1;
 	else if (str[0] == '-')
 		minus_operator = -1;

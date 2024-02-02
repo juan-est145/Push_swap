@@ -6,7 +6,7 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 18:50:06 by juestrel          #+#    #+#             */
-/*   Updated: 2024/01/31 19:23:30 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/02/02 12:11:59 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ t_stack_node	*ft_add_to_stack(t_stack_node **stack, int value)
 	if (node == NULL)
 	{
 		ft_malloc_failure(stack);
-		ft_printf("Error allocating memory to stash node, exiting program\n");
 		return (NULL);
 	}
 	node->value = value;
@@ -35,6 +34,8 @@ t_stack_node	*ft_add_to_stack(t_stack_node **stack, int value)
 		node->next = (*stack);
 		*stack = node;
 	}
+	else
+		*stack = node;
 	return (node);
 }
 
@@ -51,4 +52,5 @@ static void	ft_malloc_failure(t_stack_node **stack)
 			free(temp);
 		}
 	}
+	ft_printf("Error allocating memory to stash node, exiting program\n");
 }

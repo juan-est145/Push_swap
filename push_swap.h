@@ -6,7 +6,7 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 12:35:15 by juestrel          #+#    #+#             */
-/*   Updated: 2024/01/31 19:03:41 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/02/02 11:45:00 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,5 @@ t_stack_node			*ft_add_to_stack(t_stack_node **stack, int value);
 void					ft_no_arguments(void);
 void					ft_error_in_split(void);
 bool					ft_integer_overflow(void);
+void					ft_invalid_arguments(char *argv[], bool malloc);
 #endif

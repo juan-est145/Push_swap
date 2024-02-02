@@ -6,7 +6,7 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 19:31:25 by juestrel          #+#    #+#             */
-/*   Updated: 2024/01/31 19:21:53 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/02/02 11:45:10 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,11 @@ int	main(int argc, char *argv[])
 		if (argv == NULL)
 			ft_error_in_split();
 		if (ft_parse_arguments(argv, &a) == false)
-		{
-			free(argv);
-			exit(1);
-		}
+			ft_invalid_arguments(argv, true);
+		free(argv);
 	}
 	else
 		if (ft_parse_arguments(argv + 1, &a) == false)
-			exit(1);
+			ft_invalid_arguments(argv, false);
 	return (0);
 }

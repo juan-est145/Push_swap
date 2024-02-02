@@ -5,6 +5,7 @@ NAME = Push_Swap
 SCRS = push_swap.c\
 error_msgs.c\
 parse_string.c\
+stack_node_utils.c\
 
 OBJS = $(SCRS:.c=.o)
 
