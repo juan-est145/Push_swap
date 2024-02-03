@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 19:31:25 by juestrel          #+#    #+#             */
-/*   Updated: 2024/02/02 19:37:55 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/02/03 11:16:05 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int	main(int argc, char *argv[])
 			ft_error_in_split();
 		if (ft_parse_arguments(argv, &a) == false)
 			ft_invalid_arguments(argv, true);
+		ft_printf("%i\n", b->value);
 		ft_free_array(argv);
 	}
 	else if (ft_parse_arguments(argv + 1, &a) == false)

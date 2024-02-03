@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 12:35:15 by juestrel          #+#    #+#             */
-/*   Updated: 2024/02/02 18:47:05 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/02/03 10:23:36 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,8 @@ void						free_tree(t_binary_tree *root);
 // Functions for stacks
 t_stack_node				*ft_add_to_stack(t_stack_node **stack, int value);
 void						ft_free_stack(t_stack_node **stack);
+
+// Functions for allowed operations
+void						push_b(t_stack_node **stack_a,
+								t_stack_node **stack_b);
 #endif
