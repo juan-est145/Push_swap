@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_node_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 18:50:06 by juestrel          #+#    #+#             */
-/*   Updated: 2024/02/02 19:50:34 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/02/04 11:34:49 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,19 @@ static void	ft_queue(t_stack_node **head, t_stack_node *node)
 		temp = temp->next;
 	node->previous = temp;
 	temp->next = node;
+}
+
+unsigned int	ft_stack_length(t_stack_node **head)
+{
+	unsigned int	counter;
+	t_stack_node	*temp;
+
+	counter = 0;
+	temp = *head;
+	while (temp != NULL)
+	{
+		counter++;
+		temp = temp->next;
+	}
+	return (counter);
 }

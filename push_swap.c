@@ -6,7 +6,7 @@
 /*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 19:31:25 by juestrel          #+#    #+#             */
-/*   Updated: 2024/02/03 11:16:05 by juan             ###   ########.fr       */
+/*   Updated: 2024/02/04 11:53:48 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	ft_leaks(void)
 	system("leaks -q Push_Swap");
 }
 
-// TO DO: Change the creation of the stack so that the first argument 
-//becomes the one on top
+//atexit(ft_leaks);
 
-// atexit(ft_leaks);
+static void	ft_process_stacks(t_stack_node **a, t_stack_node **b);
+
 int	main(int argc, char *argv[])
 {
 	t_stack_node	*a;
@@ -29,6 +29,7 @@ int	main(int argc, char *argv[])
 
 	a = NULL;
 	b = NULL;
+	atexit(ft_leaks);  //Erase later
 	if (argc < 2 || argv[1][0] == '\0')
 		ft_no_arguments();
 	else if (argc == 2)
@@ -38,10 +39,19 @@ int	main(int argc, char *argv[])
 			ft_error_in_split();
 		if (ft_parse_arguments(argv, &a) == false)
 			ft_invalid_arguments(argv, true);
-		ft_printf("%i\n", b->value);
 		ft_free_array(argv);
 	}
 	else if (ft_parse_arguments(argv + 1, &a) == false)
 		ft_invalid_arguments(argv, false);
+	ft_process_stacks(&a, &b);
 	return (0);
+}
+
+static void	ft_process_stacks(t_stack_node **a, t_stack_node **b)
+{
+	unsigned int	counter;
+
+	(void)b; //Erase later
+	counter = ft_stack_length(a);
+	ft_free_stack(a);
 }

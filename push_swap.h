@@ -6,7 +6,7 @@
 /*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 12:35:15 by juestrel          #+#    #+#             */
-/*   Updated: 2024/02/03 10:23:36 by juan             ###   ########.fr       */
+/*   Updated: 2024/02/04 11:36:20 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void						free_tree(t_binary_tree *root);
 // Functions for stacks
 t_stack_node				*ft_add_to_stack(t_stack_node **stack, int value);
 void						ft_free_stack(t_stack_node **stack);
+unsigned int				ft_stack_length(t_stack_node **head);
 
 // Functions for allowed operations
 void						push_b(t_stack_node **stack_a,

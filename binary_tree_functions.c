@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   binary_tree_functions.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 12:55:17 by juestrel          #+#    #+#             */
-/*   Updated: 2024/02/02 13:45:17 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/02/04 11:40:48 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ t_binary_tree	*ft_add_tree_node(int value)
 
 t_binary_tree	*ft_check_duplicate(t_binary_tree **root, int value)
 {
-
 	if (*root == NULL)
 	{
 		*root = ft_add_tree_node(value);
