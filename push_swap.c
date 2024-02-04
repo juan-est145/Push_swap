@@ -6,17 +6,17 @@
 /*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 19:31:25 by juestrel          #+#    #+#             */
-/*   Updated: 2024/02/04 11:53:48 by juan             ###   ########.fr       */
+/*   Updated: 2024/02/04 12:27:56 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 #include "push_swap.h"
 
-void	ft_leaks(void)
+/*void	ft_leaks(void)
 {
 	system("leaks -q Push_Swap");
-}
+}*/
 
 //atexit(ft_leaks);
 
@@ -29,7 +29,6 @@ int	main(int argc, char *argv[])
 
 	a = NULL;
 	b = NULL;
-	atexit(ft_leaks);  //Erase later
 	if (argc < 2 || argv[1][0] == '\0')
 		ft_no_arguments();
 	else if (argc == 2)
@@ -51,7 +50,6 @@ static void	ft_process_stacks(t_stack_node **a, t_stack_node **b)
 {
 	unsigned int	counter;
 
-	(void)b; //Erase later
 	counter = ft_stack_length(a);
 	ft_free_stack(a);
 }
