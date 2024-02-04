@@ -9,6 +9,7 @@ stack_node_utils.c\
 binary_tree_functions.c\
 utils.c\
 stack_operations.c\
+sort_two_numbers.c\
 
 OBJS = $(SCRS:.c=.o)
 

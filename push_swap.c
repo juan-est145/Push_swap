@@ -6,7 +6,7 @@
 /*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 19:31:25 by juestrel          #+#    #+#             */
-/*   Updated: 2024/02/04 12:27:56 by juan             ###   ########.fr       */
+/*   Updated: 2024/02/04 15:58:02 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,11 @@
 
 /*void	ft_leaks(void)
 {
+	
+
 	system("leaks -q Push_Swap");
 }*/
-
-//atexit(ft_leaks);
+// atexit(ft_leaks);
 
 static void	ft_process_stacks(t_stack_node **a, t_stack_node **b);
 
@@ -51,5 +52,10 @@ static void	ft_process_stacks(t_stack_node **a, t_stack_node **b)
 	unsigned int	counter;
 
 	counter = ft_stack_length(a);
+	if (counter == 1)
+		ft_printf("Nothing, to sort\n");
+	else if (counter == 2)
+		ft_sort_two(a);
 	ft_free_stack(a);
+	ft_free_stack(b);
 }
