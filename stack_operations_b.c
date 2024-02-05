@@ -6,14 +6,14 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 17:23:56 by juestrel          #+#    #+#             */
-/*   Updated: 2024/02/05 17:34:17 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/02/05 17:51:11 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 #include "push_swap.h"
 
-void	swap_b(t_stack_node **b)
+void	swap_b(t_stack_node **b, bool only_b)
 {
 	int	temp;
 
@@ -23,7 +23,8 @@ void	swap_b(t_stack_node **b)
 		temp = (*b)->value;
 		(*b)->value = (*b)->next->value;
 		(*b)->next->value = temp;
-		ft_printf("sb\n");
+		if (only_b == true)
+			ft_printf("sb\n");
 	}
 }
 
@@ -51,7 +52,7 @@ void	push_b(t_stack_node **stack_a, t_stack_node **stack_b)
 	}
 }
 
-void	rotate_b(t_stack_node **b)
+void	rotate_b(t_stack_node **b, bool only_b)
 {
 	t_stack_node	*last_node;
 
@@ -64,11 +65,12 @@ void	rotate_b(t_stack_node **b)
 		(*b)->previous = NULL;
 		last_node->next->previous = last_node;
 		last_node->next->next = NULL;
-		ft_printf("rb\n");
+		if (only_b == true)
+			ft_printf("rb\n");
 	}
 }
 
-void	reverse_rotate_b(t_stack_node **b)
+void	reverse_rotate_b(t_stack_node **b, bool only_b)
 {
 	t_stack_node	*last_node;
 
@@ -81,8 +83,7 @@ void	reverse_rotate_b(t_stack_node **b)
 		last_node->previous = NULL;
 		(*b)->previous = last_node;
 		*b = last_node;
-		ft_printf("rrb\n");
+		if (only_b == true)
+			ft_printf("rrb\n");
 	}
 }
-
-

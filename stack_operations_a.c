@@ -6,14 +6,14 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 10:01:31 by juan              #+#    #+#             */
-/*   Updated: 2024/02/05 17:30:28 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/02/05 18:00:38 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 #include "push_swap.h"
 
-void	swap_a(t_stack_node **a)
+void	swap_a(t_stack_node **a, bool only_a)
 {
 	int	temp;
 
@@ -23,7 +23,8 @@ void	swap_a(t_stack_node **a)
 		temp = (*a)->value;
 		(*a)->value = (*a)->next->value;
 		(*a)->next->value = temp;
-		ft_printf("sa\n");
+		if (only_a == true)
+			ft_printf("sa\n");
 	}
 }
 
@@ -51,7 +52,7 @@ void	push_a(t_stack_node **stack_a, t_stack_node **stack_b)
 	}
 }
 
-void	rotate_a(t_stack_node **a)
+void	rotate_a(t_stack_node **a, bool only_a)
 {
 	t_stack_node	*last_node;
 
@@ -64,11 +65,12 @@ void	rotate_a(t_stack_node **a)
 		(*a)->previous = NULL;
 		last_node->next->previous = last_node;
 		last_node->next->next = NULL;
-		ft_printf("ra\n");
+		if (only_a == true)
+			ft_printf("ra\n");
 	}
 }
 
-void	reverse_rotate_a(t_stack_node **a)
+void	reverse_rotate_a(t_stack_node **a, bool only_a)
 {
 	t_stack_node	*last_node;
 
@@ -81,7 +83,7 @@ void	reverse_rotate_a(t_stack_node **a)
 		last_node->previous = NULL;
 		(*a)->previous = last_node;
 		*a = last_node;
-		ft_printf("rra\n");
+		if (only_a == true)
+			ft_printf("rra\n");
 	}
 }
-

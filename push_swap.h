@@ -6,7 +6,7 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 12:35:15 by juestrel          #+#    #+#             */
-/*   Updated: 2024/02/05 17:35:11 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/02/05 18:00:20 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,14 +54,18 @@ void						ft_sort_two(t_stack_node **a);
 void						ft_sort_three(t_stack_node **a);
 
 // Functions for allowed operations
-void						swap_a(t_stack_node **a);
+void						swap_a(t_stack_node **a, bool only_a);
 void						push_a(t_stack_node **stack_a,
 								t_stack_node **stack_b);
-void						rotate_a(t_stack_node **a);
-void						reverse_rotate_a(t_stack_node **a);
-void						swap_b(t_stack_node **b);
+void						rotate_a(t_stack_node **a, bool only_a);
+void						reverse_rotate_a(t_stack_node **a, bool only_a);
+void						swap_b(t_stack_node **b, bool only_b);
 void						push_b(t_stack_node **stack_a,
 								t_stack_node **stack_b);
-void						rotate_b(t_stack_node **b);
-void						reverse_rotate_b(t_stack_node **b);
+void						rotate_b(t_stack_node **b, bool only_b);
+void						reverse_rotate_b(t_stack_node **b, bool only_b);
+void						swap_s(t_stack_node **a, t_stack_node **b);
+void						rotate_r(t_stack_node **a, t_stack_node **b);
+void						reverse_rotate_r(t_stack_node **a,
+								t_stack_node **b);
 #endif
