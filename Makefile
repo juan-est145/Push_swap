@@ -8,7 +8,8 @@ parse_string.c\
 stack_node_utils.c\
 binary_tree_functions.c\
 utils.c\
-stack_operations.c\
+stack_operations_a.c\
+stack_operations_b.c\
 sorting_cases.c\
 stack_node_utils2.c\
 

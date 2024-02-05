@@ -1,63 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_operations.c                                 :+:      :+:    :+:   */
+/*   stack_operations_b.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/03 10:01:31 by juan              #+#    #+#             */
-/*   Updated: 2024/02/05 17:04:54 by juestrel         ###   ########.fr       */
+/*   Created: 2024/02/05 17:23:56 by juestrel          #+#    #+#             */
+/*   Updated: 2024/02/05 17:34:17 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 #include "push_swap.h"
 
-void	swap_a(t_stack_node **a)
+void	swap_b(t_stack_node **b)
 {
 	int	temp;
 
 	temp = 0;
-	if (*a != NULL && (*a)->next != NULL)
+	if (*b != NULL && (*b)->next != NULL)
 	{
-		temp = (*a)->value;
-		(*a)->value = (*a)->next->value;
-		(*a)->next->value = temp;
-		ft_printf("sa\n");
-	}
-}
-
-void	rotate_a(t_stack_node **a)
-{
-	t_stack_node	*last_node;
-
-	last_node = NULL;
-	if (*a != NULL && (*a)->next != NULL)
-	{
-		last_node = ft_last_node(a);
-		last_node->next = *a;
-		*a = (*a)->next;
-		(*a)->previous = NULL;
-		last_node->next->previous = last_node;
-		last_node->next->next = NULL;
-		ft_printf("ra\n");
-	}
-}
-
-void	reverse_rotate_a(t_stack_node **a)
-{
-	t_stack_node	*last_node;
-
-	last_node = NULL;
-	if (*a != NULL && (*a)->next != NULL)
-	{
-		last_node = ft_last_node(a);
-		last_node->previous->next = NULL;
-		last_node->next = *a;
-		last_node->previous = NULL;
-		(*a)->previous = last_node;
-		*a = last_node;
-		ft_printf("rra\n");
+		temp = (*b)->value;
+		(*b)->value = (*b)->next->value;
+		(*b)->next->value = temp;
+		ft_printf("sb\n");
 	}
 }
 
@@ -84,3 +50,39 @@ void	push_b(t_stack_node **stack_a, t_stack_node **stack_b)
 		ft_printf("pb\n");
 	}
 }
+
+void	rotate_b(t_stack_node **b)
+{
+	t_stack_node	*last_node;
+
+	last_node = NULL;
+	if (*b != NULL && (*b)->next != NULL)
+	{
+		last_node = ft_last_node(b);
+		last_node->next = *b;
+		*b = (*b)->next;
+		(*b)->previous = NULL;
+		last_node->next->previous = last_node;
+		last_node->next->next = NULL;
+		ft_printf("rb\n");
+	}
+}
+
+void	reverse_rotate_b(t_stack_node **b)
+{
+	t_stack_node	*last_node;
+
+	last_node = NULL;
+	if (*b != NULL && (*b)->next != NULL)
+	{
+		last_node = ft_last_node(b);
+		last_node->previous->next = NULL;
+		last_node->next = *b;
+		last_node->previous = NULL;
+		(*b)->previous = last_node;
+		*b = last_node;
+		ft_printf("rrb\n");
+	}
+}
+
+
