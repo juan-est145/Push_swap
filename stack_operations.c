@@ -6,7 +6,7 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 10:01:31 by juan              #+#    #+#             */
-/*   Updated: 2024/02/05 15:46:28 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/02/05 17:04:54 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,23 @@ void	rotate_a(t_stack_node **a)
 		last_node->next->previous = last_node;
 		last_node->next->next = NULL;
 		ft_printf("ra\n");
+	}
+}
+
+void	reverse_rotate_a(t_stack_node **a)
+{
+	t_stack_node	*last_node;
+
+	last_node = NULL;
+	if (*a != NULL && (*a)->next != NULL)
+	{
+		last_node = ft_last_node(a);
+		last_node->previous->next = NULL;
+		last_node->next = *a;
+		last_node->previous = NULL;
+		(*a)->previous = last_node;
+		*a = last_node;
+		ft_printf("rra\n");
 	}
 }
 

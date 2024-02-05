@@ -6,7 +6,7 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 12:35:15 by juestrel          #+#    #+#             */
-/*   Updated: 2024/02/05 15:41:02 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/02/05 16:22:23 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void						ft_sort_three(t_stack_node **a);
 // Functions for allowed operations
 void						rotate_a(t_stack_node **a);
 void						swap_a(t_stack_node **a);
+void						reverse_rotate_a(t_stack_node **a);
 void						push_b(t_stack_node **stack_a,
 								t_stack_node **stack_b);
 #endif
