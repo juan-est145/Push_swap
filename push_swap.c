@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 19:31:25 by juestrel          #+#    #+#             */
-/*   Updated: 2024/02/04 15:58:02 by juan             ###   ########.fr       */
+/*   Updated: 2024/02/05 15:01:51 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,11 @@ static void	ft_process_stacks(t_stack_node **a, t_stack_node **b)
 
 	counter = ft_stack_length(a);
 	if (counter == 1)
-		ft_printf("Nothing, to sort\n");
+		ft_printf("Nothing to sort\n");
 	else if (counter == 2)
 		ft_sort_two(a);
+	else if (counter == 3)
+		ft_sort_three(a);
 	ft_free_stack(a);
 	ft_free_stack(b);
 }

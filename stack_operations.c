@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_operations.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 10:01:31 by juan              #+#    #+#             */
-/*   Updated: 2024/02/04 16:25:45 by juan             ###   ########.fr       */
+/*   Updated: 2024/02/05 15:41:38 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,23 @@ void	swap_a(t_stack_node **a)
 		(*a)->value = (*a)->next->value;
 		(*a)->next->value = temp;
 		ft_printf("sa\n");
+	}
+}
+
+void	rotate_a(t_stack_node **a)
+{
+	t_stack_node	*last_node;
+
+	last_node = NULL;
+	if (*a != NULL && (*a)->next != NULL)
+	{
+		last_node = ft_last_node(a);
+		last_node->next = *a;
+		*a = (*a)->next;
+		(*a)->previous = NULL;
+		last_node->next->previous = last_node;
+		last_node->next->next = NULL;
+		ft_printf("ra\n");
 	}
 }
 

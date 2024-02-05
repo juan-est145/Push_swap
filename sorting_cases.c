@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_two_numbers.c                                 :+:      :+:    :+:   */
+/*   sorting_cases.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 15:56:13 by juan              #+#    #+#             */
-/*   Updated: 2024/02/04 16:07:32 by juan             ###   ########.fr       */
+/*   Updated: 2024/02/05 15:41:11 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,4 +17,15 @@ void	ft_sort_two(t_stack_node **a)
 {
 	if ((*a)->value > (*a)->next->value)
 		swap_a(a);
+}
+
+void	ft_sort_three(t_stack_node **a)
+{
+	if ((*a)->value > (*a)->next->value
+		&& (*a)->value < (*a)->next->next->value)
+		swap_a(a);
+	else if ((*a)->value > (*a)->next->value
+		&& (*a)->value > (*a)->next->next->value
+		&& (*a)->next->value < (*a)->next->next->value)
+		rotate_a(a);
 }
