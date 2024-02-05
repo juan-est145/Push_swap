@@ -6,7 +6,7 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 10:01:31 by juan              #+#    #+#             */
-/*   Updated: 2024/02/05 15:41:38 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/02/05 15:46:28 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,6 @@ void	push_b(t_stack_node **stack_a, t_stack_node **stack_b)
 			(*stack_b)->previous = temp;
 		}
 		*stack_b = temp;
+		ft_printf("pb\n");
 	}
 }
