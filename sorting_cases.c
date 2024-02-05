@@ -6,7 +6,7 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 15:56:13 by juan              #+#    #+#             */
-/*   Updated: 2024/02/05 18:01:10 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/02/05 18:43:50 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,9 @@ void	ft_sort_three(t_stack_node **a)
 		&& (*a)->next->value > (*a)->next->next->value
 		&& (*a)->value > (*a)->next->next->value)
 		reverse_rotate_a(a, true);
-	else
+	else if ((*a)->value > (*a)->next->value
+		&& (*a)->value > (*a)->next->next->value
+		&& (*a)->next->value > (*a)->next->next->value)
 	{
 		swap_a(a, true);
 		reverse_rotate_a(a, true);
