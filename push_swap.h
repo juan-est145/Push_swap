@@ -6,7 +6,7 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 12:35:15 by juestrel          #+#    #+#             */
-/*   Updated: 2024/02/05 18:00:20 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/02/06 19:17:10 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@
 typedef struct s_stack_node
 {
 	int						value;
+	int						index;
+	int						push_cost;
+	bool					below_median;
+	bool					cheapest;
+	struct s_stack_node		*target_node;
 	struct s_stack_node		*next;
 	struct s_stack_node		*previous;
 }							t_stack_node;
@@ -52,6 +57,11 @@ unsigned int				ft_stack_length(t_stack_node **head);
 t_stack_node				*ft_last_node(t_stack_node **head);
 void						ft_sort_two(t_stack_node **a);
 void						ft_sort_three(t_stack_node **a);
+void						ft_mechanical_turk(t_stack_node **a,
+								t_stack_node **b, unsigned int counter);
+bool						ft_check_sorted(t_stack_node **a);
+void						ft_prepare_stack_a(t_stack_node **a,
+								t_stack_node **b);
 
 // Functions for allowed operations
 void						swap_a(t_stack_node **a, bool only_a);

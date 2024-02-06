@@ -6,7 +6,7 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 19:31:25 by juestrel          #+#    #+#             */
-/*   Updated: 2024/02/05 15:01:51 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/02/06 17:48:12 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ static void	ft_process_stacks(t_stack_node **a, t_stack_node **b)
 		ft_sort_two(a);
 	else if (counter == 3)
 		ft_sort_three(a);
+	else
+		ft_mechanical_turk(a, b, counter);
 	ft_free_stack(a);
 	ft_free_stack(b);
 }

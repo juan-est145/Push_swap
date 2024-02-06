@@ -1,44 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_node_utils2.c                                :+:      :+:    :+:   */
+/*   prepare_stack_a.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/05 15:23:45 by juestrel          #+#    #+#             */
-/*   Updated: 2024/02/06 18:31:52 by juestrel         ###   ########.fr       */
+/*   Created: 2024/02/06 18:23:03 by juestrel          #+#    #+#             */
+/*   Updated: 2024/02/06 19:20:40 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 #include "push_swap.h"
 
-t_stack_node	*ft_last_node(t_stack_node **head)
-{
-	t_stack_node	*temp;
+static void	ft_update_index(t_stack_node **head);
 
-	temp = *head;
-	if (*head == NULL)
-		return (NULL);
-	while (temp->next != NULL)
-	{
-		temp = temp->next;
-	}
-	return (temp);
+void	ft_prepare_stack_a(t_stack_node **a, t_stack_node **b)
+{
+	ft_update_index(a);
+	ft_update_index(b);
 }
 
-bool	ft_check_sorted(t_stack_node **a)
+static void	ft_update_index(t_stack_node **head)
 {
+	unsigned int	i;
+	unsigned int	median;
 	t_stack_node	*temp;
 
-	if (*a == NULL)
-		return (true);
-	temp = *a;
-	while (temp->next != NULL)
+	if (*head == NULL)
+		return ;
+	median = ft_stack_length(head) / 2;
+	i = 0;
+	temp = *head;
+	while (temp != NULL)
 	{
-		if (temp->value > temp->next->value)
-			return (false);
+		temp->index = i;
+		if (i <= median)
+			temp->below_median = true;
+		else if (i > median)
+			temp->below_median = false;
 		temp = temp->next;
+		i++;
 	}
-	return (true);
 }
