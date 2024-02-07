@@ -6,7 +6,7 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 16:11:58 by juestrel          #+#    #+#             */
-/*   Updated: 2024/02/07 16:30:18 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/02/07 18:09:17 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include "push_swap.h"
 
 static void			find_targets_b(t_stack_node **a, t_stack_node **b);
-static t_stack_node	*ft_find_lowest_value_node(t_stack_node **head);
 
 void	ft_prepare_stack_b(t_stack_node **a, t_stack_node **b)
 {
@@ -47,30 +46,8 @@ static void	find_targets_b(t_stack_node **a, t_stack_node **b)
 			temp_a = temp_a->next;
 		}
 		if (found_highest_best == false)
-			temp_b->target_node = ft_find_lowest_value_node(b);
+			temp_b->target_node = ft_find_lowest_value_node(a);
 		temp_b = temp_b->next;
 	}
 }
 
-static t_stack_node	*ft_find_lowest_value_node(t_stack_node **head)
-{
-	t_stack_node	*temp;
-	int				lowest_value;
-	t_stack_node	*return_node;
-
-	if (*head == NULL)
-		return (NULL);
-	temp = *head;
-	lowest_value = 2147483647;
-	return_node = NULL;
-	while (temp != NULL)
-	{
-		if (temp->value < lowest_value)
-		{
-			lowest_value = temp->value;
-			return_node = temp;
-		}
-		temp = temp->next;
-	}
-	return (return_node);
-}

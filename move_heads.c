@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   move_between_stacks.c                              :+:      :+:    :+:   */
+/*   move_a_to_b.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 13:25:39 by juestrel          #+#    #+#             */
-/*   Updated: 2024/02/07 15:54:08 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/02/07 17:09:13 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ static void	rotate_cheapest_on_top(t_stack_node **a, t_stack_node **b,
 				t_stack_node *cheapest_node);
 static void	reverse_rotate_cheapest_on_top(t_stack_node **a, t_stack_node **b,
 				t_stack_node *cheapest_node);
-static void	check_correct_heads(t_stack_node **head,
-				t_stack_node *cheapest_node, char type_of_stack);
 
 void	ft_move_a_to_b(t_stack_node **a, t_stack_node **b)
 {
@@ -54,24 +52,9 @@ static void	reverse_rotate_cheapest_on_top(t_stack_node **a, t_stack_node **b,
 	ft_update_index(b);
 }
 
-static void	check_correct_heads(t_stack_node **head,
-		t_stack_node *cheapest_node, char type_of_stack)
+void	ft_move_b_to_a(t_stack_node **a, t_stack_node **b)
 {
-	while (*head != cheapest_node)
-	{
-		if (type_of_stack == 'a')
-		{
-			if (cheapest_node->below_median == true)
-				rotate_a(head, true);
-			else
-				reverse_rotate_a(head, true);
-		}
-		else if (type_of_stack == 'b')
-		{
-			if (cheapest_node->below_median == true)
-				rotate_b(head, true);
-			else
-				reverse_rotate_b(head, true);
-		}
-	}
+	check_correct_heads(a, (*b)->target_node, 'a');
+	push_a(a, b);
 }
+
