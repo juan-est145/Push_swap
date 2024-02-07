@@ -6,12 +6,12 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 18:23:03 by juestrel          #+#    #+#             */
-/*   Updated: 2024/02/07 15:14:28 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/02/07 18:47:54 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
-#include "push_swap.h"
+#include "../libft/libft.h"
+#include "../push_swap.h"
 
 static void	find_targets_a(t_stack_node **a, t_stack_node **b);
 static void	calculate_move_cost_a(t_stack_node **a, t_stack_node **b);

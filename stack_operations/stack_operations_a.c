@@ -6,12 +6,12 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 10:01:31 by juan              #+#    #+#             */
-/*   Updated: 2024/02/05 18:00:38 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/02/07 18:53:51 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
-#include "push_swap.h"
+#include "../libft/libft.h"
+#include "../push_swap.h"
 
 void	swap_a(t_stack_node **a, bool only_a)
 {

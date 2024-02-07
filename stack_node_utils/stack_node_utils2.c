@@ -6,12 +6,12 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 15:23:45 by juestrel          #+#    #+#             */
-/*   Updated: 2024/02/07 15:14:46 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/02/07 18:51:44 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
-#include "push_swap.h"
+#include "../libft/libft.h"
+#include "../push_swap.h"
 
 t_stack_node	*ft_last_node(t_stack_node **head)
 {

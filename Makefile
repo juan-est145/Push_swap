@@ -5,18 +5,18 @@ NAME = Push_Swap
 SCRS = push_swap.c\
 error_msgs.c\
 parse_string.c\
-stack_node_utils.c\
+stack_node_utils/stack_node_utils.c\
+stack_node_utils/stack_node_utils2.c\
+stack_node_utils/stack_node_utils3.c\
 binary_tree_functions.c\
 free_array.c\
-stack_operations_a.c\
-stack_operations_b.c\
-stack_operations_combined.c\
+stack_operations/stack_operations_a.c\
+stack_operations/stack_operations_b.c\
+stack_operations/stack_operations_combined.c\
 sorting_cases.c\
-stack_node_utils2.c\
-prepare_stack_a.c\
+prepare_stacks/prepare_stack_a.c\
+prepare_stacks/prepare_stack_b.c\
 move_heads.c\
-prepare_stack_b.c\
-stack_node_utils3.c\
 
 OBJS = $(SCRS:.c=.o)
 

@@ -6,12 +6,12 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 17:00:58 by juestrel          #+#    #+#             */
-/*   Updated: 2024/02/07 17:22:00 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/02/07 18:51:52 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
-#include "push_swap.h"
+#include "../libft/libft.h"
+#include "../push_swap.h"
 
 void	check_correct_heads(t_stack_node **head, t_stack_node *cheapest_node,
 		char type_of_stack)

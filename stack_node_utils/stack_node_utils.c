@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   stack_node_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 18:50:06 by juestrel          #+#    #+#             */
-/*   Updated: 2024/02/04 11:34:49 by juan             ###   ########.fr       */
+/*   Updated: 2024/02/07 18:51:36 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
-#include "push_swap.h"
+#include "../libft/libft.h"
+#include "../push_swap.h"
 
 static void		ft_malloc_failure(t_stack_node **stack);
 static void		ft_queue(t_stack_node **head, t_stack_node *node);
