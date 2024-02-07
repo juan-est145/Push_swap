@@ -14,7 +14,7 @@ stack_operations_combined.c\
 sorting_cases.c\
 stack_node_utils2.c\
 prepare_stack_a.c\
-move_between_stacks.c\
+move_a_to_b.c\
 prepare_stack_b.c\
 
 OBJS = $(SCRS:.c=.o)
