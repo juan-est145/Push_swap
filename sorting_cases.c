@@ -6,7 +6,7 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 15:56:13 by juan              #+#    #+#             */
-/*   Updated: 2024/02/07 15:59:32 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/02/07 16:16:11 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,4 +85,8 @@ void	ft_mechanical_turk(t_stack_node **a, t_stack_node **b,
 		counter--;
 	}
 	ft_sort_three(a);
+	while (*b != NULL)
+	{
+		ft_prepare_stack_b(a, b);
+	}
 }
