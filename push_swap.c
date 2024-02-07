@@ -6,7 +6,7 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 19:31:25 by juestrel          #+#    #+#             */
-/*   Updated: 2024/02/07 15:29:41 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/02/07 19:16:43 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,11 @@ static void	ft_process_stacks(t_stack_node **a, t_stack_node **b)
 	unsigned int	counter;
 
 	counter = ft_stack_length(a);
-	if (counter == 1)
-		ft_printf("Nothing to sort\n");
-	else if (counter == 2)
+	if (counter == 2)
 		ft_sort_two(a);
 	else if (counter == 3)
 		ft_sort_three(a);
-	else
+	else if (counter > 3)
 		ft_mechanical_turk(a, b, counter);
 	ft_free_stack(a);
 	ft_free_stack(b);

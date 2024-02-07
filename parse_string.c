@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_string.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 19:52:37 by juestrel          #+#    #+#             */
-/*   Updated: 2024/02/04 12:08:47 by juan             ###   ########.fr       */
+/*   Updated: 2024/02/07 19:11:46 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ bool	ft_parse_arguments(char *argv[], t_stack_node **stack)
 			number = ft_atoi_long(*argv);
 			if (number > 2147483647 || number < -2147483648)
 				return (free_tree(duplicates), ft_free_stack(stack),
-					ft_integer_overflow());
+					false);
 			if (ft_add_to_stack(stack, (int)number) == NULL)
 				return (free_tree(duplicates), ft_free_stack(stack), false);
 			if (ft_check_duplicate(&duplicates, (int)number) == NULL)

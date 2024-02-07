@@ -6,7 +6,7 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 12:35:15 by juestrel          #+#    #+#             */
-/*   Updated: 2024/02/07 17:18:18 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/02/07 19:13:13 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ void						ft_free_array(char *argv[]);
 // Functions for handling errors
 void						ft_no_arguments(void);
 void						ft_error_in_split(void);
-bool						ft_integer_overflow(void);
 void						ft_invalid_arguments(char *argv[], bool malloc);
 
 // Functions for binary tree check
