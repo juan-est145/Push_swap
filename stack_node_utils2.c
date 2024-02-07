@@ -6,7 +6,7 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 15:23:45 by juestrel          #+#    #+#             */
-/*   Updated: 2024/02/07 12:04:24 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/02/07 15:14:46 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,41 @@ t_stack_node	*ft_find_highest_value_node(t_stack_node **head)
 		temp = temp->next;
 	}
 	return (return_node);
+}
+
+t_stack_node	*ft_return_cheapest_node(t_stack_node **head)
+{
+	t_stack_node	*temp;
+
+	temp = *head;
+	while (temp != NULL)
+	{
+		if (temp->cheapest == true)
+			return (temp);
+		temp = temp->next;
+	}
+	return (NULL);
+}
+
+void	ft_update_index(t_stack_node **head)
+{
+	unsigned int	i;
+	unsigned int	median;
+	t_stack_node	*temp;
+
+	if (*head == NULL)
+		return ;
+	median = ft_stack_length(head) / 2;
+	i = 0;
+	temp = *head;
+	while (temp != NULL)
+	{
+		temp->index = i;
+		if (i <= median)
+			temp->below_median = true;
+		else if (i > median)
+			temp->below_median = false;
+		temp = temp->next;
+		i++;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 12:35:15 by juestrel          #+#    #+#             */
-/*   Updated: 2024/02/07 12:07:53 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/02/07 15:29:25 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,9 @@ bool						ft_check_sorted(t_stack_node **a);
 void						ft_prepare_stack_a(t_stack_node **a,
 								t_stack_node **b);
 t_stack_node				*ft_find_highest_value_node(t_stack_node **head);
+void						ft_move_a_to_b(t_stack_node **a, t_stack_node **b);
+t_stack_node				*ft_return_cheapest_node(t_stack_node **head);
+void						ft_update_index(t_stack_node **head);
 
 // Functions for allowed operations
 void						swap_a(t_stack_node **a, bool only_a);

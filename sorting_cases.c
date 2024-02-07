@@ -6,7 +6,7 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 15:56:13 by juan              #+#    #+#             */
-/*   Updated: 2024/02/06 19:18:19 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/02/07 15:59:32 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,17 +71,18 @@ void	ft_mechanical_turk(t_stack_node **a, t_stack_node **b,
 {
 	if (ft_check_sorted(a) == true)
 		return ;
-	if (counter == 4)
+	push_b(a, b);
+	counter--;
+	if (counter >= 4)
 	{
 		push_b(a, b);
-		ft_sort_three(a);
-		//Rest of the implementation
+		counter--;
 	}
-	else
+	while (counter > 3)
 	{
-		push_b(a, b);
-		push_b(a, b);
 		ft_prepare_stack_a(a, b);
-		//Rest of the implementation
+		ft_move_a_to_b(a, b);
+		counter--;
 	}
+	ft_sort_three(a);
 }

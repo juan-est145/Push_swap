@@ -6,14 +6,13 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 18:23:03 by juestrel          #+#    #+#             */
-/*   Updated: 2024/02/07 13:11:00 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/02/07 15:14:28 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 #include "push_swap.h"
 
-static void	ft_update_index(t_stack_node **head);
 static void	find_targets_a(t_stack_node **a, t_stack_node **b);
 static void	calculate_move_cost_a(t_stack_node **a, t_stack_node **b);
 static void	find_cheapest_push_a(t_stack_node **head);
@@ -25,29 +24,6 @@ void	ft_prepare_stack_a(t_stack_node **a, t_stack_node **b)
 	find_targets_a(a, b);
 	calculate_move_cost_a(a, b);
 	find_cheapest_push_a(a);
-}
-
-static void	ft_update_index(t_stack_node **head)
-{
-	unsigned int	i;
-	unsigned int	median;
-	t_stack_node	*temp;
-
-	if (*head == NULL)
-		return ;
-	median = ft_stack_length(head) / 2;
-	i = 0;
-	temp = *head;
-	while (temp != NULL)
-	{
-		temp->index = i;
-		if (i <= median)
-			temp->below_median = true;
-		else if (i > median)
-			temp->below_median = false;
-		temp = temp->next;
-		i++;
-	}
 }
 
 static void	find_targets_a(t_stack_node **a, t_stack_node **b)
