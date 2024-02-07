@@ -6,7 +6,7 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 15:23:45 by juestrel          #+#    #+#             */
-/*   Updated: 2024/02/06 18:31:52 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/02/07 12:04:24 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,27 @@ bool	ft_check_sorted(t_stack_node **a)
 		temp = temp->next;
 	}
 	return (true);
+}
+
+t_stack_node	*ft_find_highest_value_node(t_stack_node **head)
+{
+	t_stack_node	*temp;
+	int				highest_value;
+	t_stack_node	*return_node;
+
+	if (*head == NULL)
+		return (NULL);
+	temp = *head;
+	highest_value = -2147483648;
+	return_node = NULL;
+	while (temp != NULL)
+	{
+		if (temp->value > highest_value)
+		{
+			highest_value = temp->value;
+			return_node = temp;
+		}
+		temp = temp->next;
+	}
+	return (return_node);
 }
