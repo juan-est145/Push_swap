@@ -6,20 +6,12 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 19:31:25 by juestrel          #+#    #+#             */
-/*   Updated: 2024/02/07 19:16:43 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/02/08 15:05:38 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 #include "push_swap.h"
-
-/*void	ft_leaks(void)
-{
-	
-
-	system("leaks -q Push_Swap");
-}*/
-// atexit(ft_leaks);
 
 static void	ft_process_stacks(t_stack_node **a, t_stack_node **b);
 
