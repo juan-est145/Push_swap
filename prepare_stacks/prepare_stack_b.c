@@ -6,7 +6,7 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 16:11:58 by juestrel          #+#    #+#             */
-/*   Updated: 2024/02/07 18:48:05 by juestrel         ###   ########.fr       */
+/*   Updated: 2024/02/08 13:24:34 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,3 @@ static void	find_targets_b(t_stack_node **a, t_stack_node **b)
 		temp_b = temp_b->next;
 	}
 }
-
