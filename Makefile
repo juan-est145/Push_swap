@@ -1,6 +1,6 @@
 LIBFT_PATH = libft
 
-NAME = Push_Swap
+NAME = push_swap
 
 SCRS = push_swap.c\
 error_msgs.c\
