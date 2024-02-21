@@ -22,7 +22,7 @@ OBJS = $(SCRS:.c=.o)
 
 HEADER = push_swap.h
 
-COMPILER = CC
+COMPILER = $(CC)
 CFLAGS= -Wall -Werror -Wextra
 LIBRARY_FLAG = -Llibft -lft -o
 
@@ -37,7 +37,7 @@ make-library-debug:
 	$(MAKE) -C $(LIBFT_PATH) debug
 
 $(NAME): $(OBJS) $(HEADER)
-	$(COMPILER) $(CFLAGS) $(LIBRARY_FLAG) $(NAME) $(OBJS)
+	$(COMPILER) $(CFLAGS) $(OBJS) $(LIBRARY_FLAG) $(NAME) 
 
 clean:
 	$(MAKE) clean -C $(LIBFT_PATH)
